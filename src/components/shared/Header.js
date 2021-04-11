@@ -1,23 +1,19 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styles from './Header.modules.css';
-import { isLoggedIn, removeUserToken } from '../../utils/tokenUtils';
+import { isLoggedIn, removeUserToken, getToken } from '../../utils/tokenUtils';
 
 const Header = () => {
     const history = useHistory();
     const [authenticatorTitle, setAuthenticatorTitle] = React.useState('Register');
 
     React.useEffect(() => {
-        if (isLoggedIn) {
+        if (isLoggedIn()) {
             setAuthenticatorTitle('Logout');
         } else {
             setAuthenticatorTitle('Register');
         }
-    }, []);
-
-    const logoutUser = () => {
-        console.log('The user has been logged out');
-    };
+    }, [getToken()]);
 
     const handleAuthenticationEvents = () => {
         if (!isLoggedIn()) {
