@@ -12,9 +12,7 @@
         }
     },
     "lint-staged": {
-        "./src/*": [
-            "prettier --write src/"
-        ]
+        "./src/*": "prettier111 --write"
     },
     "author": {
         "name": "anarchymonkey (Aniket Batabyal)",
