@@ -32,7 +32,7 @@ const ChatList = () => {
     const handleChatGroupClick = (id) => {
         console.log('id is', id);
         setActiveChatId(id);
-                                                                             history.push(`/chat/${id}`);
+                     history.push(`/chat/${id}`);
     };
     return (
         <div className={styles.chatListContainer}>

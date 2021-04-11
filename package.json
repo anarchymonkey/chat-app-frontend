@@ -12,6 +12,9 @@
             "pre-commit": "prettier --write src/"
         }
     },
+    "lint-staged": {
+        "./src/*.js": "prettier --write"
+    },
     "author": {
         "name": "anarchymonkey (Aniket Batabyal)",
         "email": "aniketbatabyal1996@gmail.com"
