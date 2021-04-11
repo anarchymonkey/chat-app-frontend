@@ -15,9 +15,9 @@ const Routes = () => {
             <Header />
             <Suspense fallback={<div> Lazy Loading components </div>}>
                 <Switch>
-                    <Route path='/register' component={Register} />
-                    <Route path='/login' component={Login} />
-                    <AuthenticatedRoute path='/' component={Chat} />
+                    <Route path="/register" component={Register} />
+                    <Route path="/login" component={Login} />
+                    <AuthenticatedRoute path="/" component={Chat} />
                 </Switch>
             </Suspense>
         </>

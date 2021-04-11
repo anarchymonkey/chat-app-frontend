@@ -16,7 +16,7 @@ const Chat = () => {
                 <ChatList />
                 <Suspense fallback={<div> loding chat component </div>}>
                     <Switch>
-                        <Route path='/chat/:id' component={ChatMessages} />
+                        <Route path="/chat/:id" component={ChatMessages} />
                     </Switch>
                 </Suspense>
             </div>

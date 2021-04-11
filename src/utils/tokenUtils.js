@@ -1,6 +1,5 @@
 import cookie from 'js-cookie';
 
-
 export const setToken = (token) => {
     cookie.set('user-token', token, {
         expires: 7,
@@ -9,7 +8,7 @@ export const setToken = (token) => {
 
 export const getToken = () => {
     return cookie.get('user-token');
-}
+};
 
 export const isLoggedIn = () => {
     const token = getToken();

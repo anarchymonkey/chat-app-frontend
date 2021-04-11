@@ -8,7 +8,7 @@ const Header = () => {
     const [authenticatorTitle, setAuthenticatorTitle] = React.useState('Register');
 
     React.useEffect(() => {
-        if(isLoggedIn) {
+        if (isLoggedIn) {
             setAuthenticatorTitle('Logout');
         } else {
             setAuthenticatorTitle('Register');
@@ -17,21 +17,25 @@ const Header = () => {
 
     const logoutUser = () => {
         console.log('The user has been logged out');
-    }
-    
+    };
+
     const handleAuthenticationEvents = () => {
-        if(!isLoggedIn()) {
+        if (!isLoggedIn()) {
             history.push('/register');
         } else {
             removeUserToken();
             history.push('/login');
         }
-    }
+    };
     return (
-    <div className={styles.headerContainer}>
-        <div className={styles.headerTitle}>Chat Away</div>
-        <div className={styles.authRedirect} onClick={() => handleAuthenticationEvents()}> {authenticatorTitle} </div>
-    </div>);
+        <div className={styles.headerContainer}>
+            <div className={styles.headerTitle}>Chat Away</div>
+            <div className={styles.authRedirect} onClick={() => handleAuthenticationEvents()}>
+                {' '}
+                {authenticatorTitle}{' '}
+            </div>
+        </div>
+    );
 };
 
 export default Header;

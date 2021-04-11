@@ -6,12 +6,12 @@ const AuthenticatedRoute = (props) => {
     const history = useHistory();
 
     React.useEffect(() => {
-        if(!isLoggedIn()) {
+        if (!isLoggedIn()) {
             history.push('/login');
         }
-    }, [])
+    }, []);
 
-    return (<Route {...props} />);
+    return <Route {...props} />;
 };
 
 export default AuthenticatedRoute;

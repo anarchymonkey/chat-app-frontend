@@ -9,7 +9,7 @@ const httpLink = new HttpLink({
     uri,
     headers: {
         authorization: getToken(),
-    }
+    },
 });
 
 // const wsLink = new WebSocketLink({

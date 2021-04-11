@@ -10,29 +10,38 @@ const defaultValues = {
 console.log(REGISTER_USER, LOGIN_USER, '<====');
 export default {
     registerUser: thunk((__, payload) => {
-        return client.mutate({
-            mutation: REGISTER_USER,
-            variables: payload
-        }).then(resp => resp).catch(err => { throw err });
+        return client
+            .mutate({
+                mutation: REGISTER_USER,
+                variables: payload,
+            })
+            .then((resp) => resp)
+            .catch((err) => {
+                throw err;
+            });
     }),
-    loginUser: thunk((actions, payload) => { 
-        return client.query({
-            query: LOGIN_USER,
-            variables: payload
-        }).then(resp => setToken(resp.data.token)).catch(err => { throw err });
+    loginUser: thunk((actions, payload) => {
+        return client
+            .query({
+                query: LOGIN_USER,
+                variables: payload,
+            })
+            .then((resp) => setToken(resp.data.token))
+            .catch((err) => {
+                throw err;
+            });
     }),
 
     setLoginDetails: action((state, payload) => {
         return {
             ...state,
             ...payload,
-        }
+        };
     }),
 
     resetReduxState: action(() => {
         return {
             ...defaultValues,
-        }
-    })
-
-}
+        };
+    }),
+};
