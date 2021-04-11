@@ -9,11 +9,8 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged"
+            "pre-commit": "prettier --write src/"
         }
-    },
-    "lint-staged": {
-        "./src/": "prettier --write src/"
     },
     "author": {
         "name": "anarchymonkey (Aniket Batabyal)",
